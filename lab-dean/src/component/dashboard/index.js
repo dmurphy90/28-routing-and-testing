@@ -3,16 +3,16 @@ import NoteCreateForm from '../note-create-form/index';
 import NoteList from '../note-list/index';
 import uuid from 'uuid/v1';
 
-class Dashboard extends React.Component {
-  constructor(props) {
+class Dashboard extends React.Component{
+  constructor(props){
     super(props);
     this.state = {
       notes: [],
     };
 
     let memberFunctions = Object.getOwnPropertyNames(Dashboard.prototype);
-    for(let functionName of memberFunctions) {
-      if(functionName.startsWith('handle')) {
+    for(let functionName of memberFunctions){
+      if(functionName.startsWith('handle')){
         this[functionName] = this[functionName].bind(this);
       }
     }
@@ -27,17 +27,17 @@ class Dashboard extends React.Component {
   }
 
   handleRemoveNotes(e) {
-    let id = e.target.value;
+    let id = e.target.value
     this.setState({
-      notes: this.state.notes.filter(note => note.id !== id),
+      notes: this.state.notes.filter(note => note.id !== id)
     });
   }
 
-  render() {
+  render(){
     return(
       <div>
         <h1>Dashboard</h1>
-        <NoteCreateForm handleAddNotes={this.handleADdNotes}/>
+        <NoteCreateForm handleAddNotes={this.handleAddNotes}/>
         <NoteList noteArray={this.state.notes} handleRemoveNotes={this.handleRemoveNotes}/>
       </div>
     );

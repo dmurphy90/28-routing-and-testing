@@ -1,7 +1,7 @@
 import React from 'react';
 
-class Landing extends React.Component {
-  render() {
+class Landing extends React.Component{
+  render(){
     return(
       <div>
         <h1>Hey look, some notes!</h1>

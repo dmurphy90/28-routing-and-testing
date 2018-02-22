@@ -1,7 +1,7 @@
 import React from 'react';
 
-class NoteCreateForm extends React.Component {
-  constructor(props) {
+class NoteCreateForm extends React.Component{
+  constructor(props){
     super(props);
     this.state = {
       title: '',
@@ -36,7 +36,7 @@ class NoteCreateForm extends React.Component {
     });
   }
 
-  render() {
+  render(){
     return(
       <form className='note_input_form' onSubmit={this.handleSubmit}>
         <div className='input_area'>
