@@ -61,3 +61,5 @@ class NoteCreateForm extends React.Component{
     );
   }
 }
+
+export default NoteCreateForm;
