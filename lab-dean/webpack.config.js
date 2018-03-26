@@ -12,7 +12,7 @@ module.exports = {
     publicPath: '/',
   },
   plugins: [
-    new HtmlPlugin({template: `${__dirname}/src/index.html`}),
+    new HtmlPlugin(),
     new ExtractTextPlugin('bundle-[hash].css'),
   ],
   module: {
@@ -27,5 +27,8 @@ module.exports = {
         loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
       },
     ],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
 };

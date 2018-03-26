@@ -30,7 +30,52 @@ button {
   font-size: 15px;
 }
 
-ul li {
+ul {
+  list-style-type: none;
+}
+
+
+h2 {
   text-align: center;
+  text-decoration: underline;
+}
+
+h3 {
+  text-align: center;
+}
+
+h6 {
+  text-align: center;
+}
+
+section.topic_data {
+  outline: 3px solid #FFFDFE;
+  text-align: center;
+  margin: 0 auto;
+}
+
+p {
+  text-decoration: underline;
+  text-align: center;
+}
+
+a {
+  color: #2A93E8;
   text-decoration: none;
+  text-align: center;
+}
+
+input.input {
+  width: 150px;
+  height: 20px;
+  border: none;
+}
+
+input.number {
+  height: 20px;
+  border: none;
+}
+
+div.input_area {
+  text-align: center;
 }

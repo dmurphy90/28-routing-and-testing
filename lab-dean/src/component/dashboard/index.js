@@ -1,5 +1,5 @@
 import React from 'react';
-import NoteCreateForm from '../note-create-form/index';
+import NoteCreateFrom from '../note-create-form/index';
 import NoteList from '../note-list/index';
 import uuid from 'uuid/v1';
 
@@ -9,7 +9,7 @@ class Dashboard extends React.Component{
     this.state = {
       notes: [],
     };
-
+ 
     let memberFunctions = Object.getOwnPropertyNames(Dashboard.prototype);
     for(let functionName of memberFunctions){
       if(functionName.startsWith('handle')){
@@ -18,7 +18,7 @@ class Dashboard extends React.Component{
     }
   }
 
-  handleAddNotes(notes) {
+  handleAddNotes(notes){
     notes.id = uuid();
     notes.publishedOn = new Date();
     this.setState(previousState => {
@@ -26,21 +26,23 @@ class Dashboard extends React.Component{
     });
   }
 
-  handleRemoveNotes(e) {
-    let id = e.target.value
+  handleRemoveNotes(event){
+    let id = event.target.value;
     this.setState({
-      notes: this.state.notes.filter(note => note.id !== id)
+      notes: this.state.notes.filter(note => note.id !== id),
     });
   }
-
+ 
+  
   render(){
     return(
       <div>
         <h1>Dashboard</h1>
-        <NoteCreateForm handleAddNotes={this.handleAddNotes}/>
+        <NoteCreateFrom handleAddNotes={this.handleAddNotes}/>
         <NoteList noteArray={this.state.notes} handleRemoveNotes={this.handleRemoveNotes}/>
       </div>
     );
+
   }
 }
 

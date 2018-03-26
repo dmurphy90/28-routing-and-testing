@@ -9,10 +9,10 @@ class NoteItem extends React.Component{
     return(
       <div>
         <h2>{this.props.note.title}</h2>
-        <h3>{this.props.note.publishedOn.toString()}</h3>
+        <h6>{this.props.note.publishedOn.toString()}</h6>
         <p>{this.props.note.content}</p>
-        <button 
-          className='delete_button'
+        <button
+          className='delete_btn'
           type='button'
           value={this.props.note.id}
           onClick={this.props.handleRemoveNotes}

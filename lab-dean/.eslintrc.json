@@ -12,7 +12,6 @@
     "res": true,
     "next": true
   },
-  "extends": "eslint:recommended",
   "parserOptions": {
     "extends": ["eslint:recommended", "plugin:react/recommended"],
     "sourceType": "module",

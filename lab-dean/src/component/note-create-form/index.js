@@ -1,6 +1,7 @@
+
 import React from 'react';
 
-class NoteCreateForm extends React.Component{
+class NoteCreateFrom extends React.Component{
   constructor(props){
     super(props);
     this.state = {
@@ -10,16 +11,16 @@ class NoteCreateForm extends React.Component{
       editing: false,
     };
 
-    let memberFunctions = Object.getOwnPropertyNames(NoteCreateForm.prototype);
-    for(let functionName of memberFunctions) {
-      if(functionName.startsWith('handle')) {
+    let memberFunctions = Object.getOwnPropertyNames(NoteCreateFrom.prototype);
+    for(let functionName of memberFunctions){
+      if(functionName.startsWith('handle')){
         this[functionName] = this[functionName].bind(this);
       }
     }
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
+  handleSubmit(event){
+    event.preventDefault();
     this.props.handleAddNotes(this.state);
     this.setState({
       title: '',
@@ -29,8 +30,8 @@ class NoteCreateForm extends React.Component{
     });
   }
 
-  handleChange(e) {
-    let {name, value} = e.target;
+  handleChange(event){
+    let {name,value} = event.target;
     this.setState({
       [name]: value,
     });
@@ -40,24 +41,25 @@ class NoteCreateForm extends React.Component{
     return(
       <form className='note_input_form' onSubmit={this.handleSubmit}>
         <div className='input_area'>
-          <input 
+          <input
             type='text'
             name='title'
-            placeholder='Title'
+            placeholder='Note Title'
             value={this.state.title}
-            onChange={this.handleChange}
+            onChange={this.handleChange}  
           />
-
           <input
             type='text'
             name='content'
-            placeholder='Enter Note Contents'
+            placeholder='Note Content'
             value={this.state.content}
-            onChange={this.handleChange}
+            onChange={this.handleChange}  
           />
         </div>
-        <button className='submit_button' type='submit'>Save Note</button>
+        <button className='submit_btn' type='submit'> make that note! </button>
       </form>
     );
   }
 }
+
+export default NoteCreateFrom;

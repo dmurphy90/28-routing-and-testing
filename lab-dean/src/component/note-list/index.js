@@ -14,9 +14,12 @@ class NoteList extends React.Component{
             return <li key={index}>
               <NoteItem note={note} handleRemoveNotes={this.props.handleRemoveNotes} index={index}/>
             </li>;
-          })
+          }
+          )
         }
       </ul>
     );
   }
 }
+
+export default NoteList;
